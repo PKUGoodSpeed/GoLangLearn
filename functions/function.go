@@ -3,6 +3,7 @@ package main
 import "fmt"
 import V "./variadic"
 import R "./recu"
+import M "./methods"
 
 func Febnacci(x0, x1 int) (int, int, int, int, int){
     A := [5] int{x0, x1, 0, 0, 0}
@@ -34,4 +35,10 @@ func main(){
     for i:=0; i<32; i++{
         fmt.Println(R.Factorial(i))
     }
+    fmt.Println("\n\n\n\n\n==================")
+    fmt.Println("Interface and methods")
+    r := M.Resnet{Cnn: 1, Fc: 1, Dropout: 0.5}
+    x := M.Xception{Shaocong: 1, Zebo: 1}
+    M.GetModelSummary(r, 10, 0.1)
+    M.GetModelSummary(x, 10, 0.1)
 }
